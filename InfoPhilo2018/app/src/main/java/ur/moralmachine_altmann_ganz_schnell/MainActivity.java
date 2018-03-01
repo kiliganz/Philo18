@@ -10,31 +10,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ///Testkommentar
-        // Aldu pusht was auf dem master-branch
 
-
-        ///llakdflsadnvcljksadc
-
-        //ladkflkadv
-
-        //sakdlkasdnlksd
     }
 
-
-    public void testVoid()  {
-
-
-        System.out.print(112);
-    }
-
-    public void dominikFunction(){
-        System.out.print("Fuck you, Git!!!");
-    }
-    public void Kilian()  {
+    public void KilianFunction()  {
 
 
-        System.out.print("Hallo Dominik... wie gehts ");
+        System.out.print("Hallo Dominik");
 
 
     }
