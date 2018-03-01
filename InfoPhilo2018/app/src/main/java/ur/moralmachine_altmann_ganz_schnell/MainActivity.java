@@ -27,4 +27,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // double testing
+
+    public void neuerTest(){
+        System.out.println("Servus");
+    }
 }
