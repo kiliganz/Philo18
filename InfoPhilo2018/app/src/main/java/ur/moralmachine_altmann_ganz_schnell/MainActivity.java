@@ -28,4 +28,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    }
+
+    public void KilianFunction()  {
+
+
+        System.out.print("Hallo Dominik");
+
+
+    }
+
+    public void Dominik (){
+        System.out.print("dere");
+    }
+
 }
