@@ -12,18 +12,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    public void testVoid()  {
-
-
-        System.out.print(112);
-    }
-<<<<<<< HEAD
-=======
-    
-    public void Dominik (){
-        System.out.print("dere");
-    }
->>>>>>> Dominik
-
 }
