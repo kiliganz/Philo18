@@ -18,4 +18,8 @@ public class MainActivity extends AppCompatActivity {
         System.out.print("Master branch test");
     }
 
+    public void testBranchFunc(){
+        System.out.print("Testbranch");
+    }
+
 }
