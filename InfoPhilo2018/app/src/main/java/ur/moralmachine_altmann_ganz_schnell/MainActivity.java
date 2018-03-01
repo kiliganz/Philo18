@@ -11,14 +11,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     }
-
-
-    public void testVoid()  {
-
-
-        System.out.print(112);
-    }
-
+    
     public void Kilian(){
         System.out.print("habedere Aldu");
     }
