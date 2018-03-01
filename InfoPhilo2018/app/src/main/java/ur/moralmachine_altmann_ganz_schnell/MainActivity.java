@@ -12,7 +12,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void dominikFunction(){
-        System.out.print("Fuck you, Git!!!");
+
+    public void testVoid()  {
+
+
+        System.out.print(112);
     }
+
+
+    public void KilianFunction()  {
+
+
+        System.out.print("Hallo Dominik");
+
+
+    }
+
+    public void Dominik (){
+        System.out.print("dere");
+    }
+
 }
