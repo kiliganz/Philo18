@@ -28,4 +28,10 @@ public class MainActivity extends AppCompatActivity {
         System.out.print(112);
     }
 
+    public void testVoid2()  {
+
+
+        System.out.print(1143);
+    }
+
 }
