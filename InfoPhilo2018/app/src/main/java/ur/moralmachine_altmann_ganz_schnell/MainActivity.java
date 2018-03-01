@@ -10,15 +10,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ///Testkommentar
-        // Aldu pusht was auf dem master-branch
-
-
-        ///llakdflsadnvcljksadc
-
-        //ladkflkadv
-
-        //sakdlkasdnlksd
     }
 
 
@@ -28,10 +19,10 @@ public class MainActivity extends AppCompatActivity {
         System.out.print(112);
     }
 
-    public void testVoid2()  {
+
+    public void Kilian()  {
 
 
-        System.out.print(1143);
+        System.out.print("Hallo Dominik");
     }
-
 }
