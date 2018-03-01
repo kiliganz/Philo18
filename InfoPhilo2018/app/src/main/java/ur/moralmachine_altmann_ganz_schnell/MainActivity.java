@@ -31,13 +31,18 @@ public class MainActivity extends AppCompatActivity {
     public void dominikFunction(){
         System.out.print("Fuck you, Git!!!");
     }
-    public void testVoid2()  {
+    public void Kilian()  {
 
 
+<<<<<<< HEAD
 
         System.out.print("Hallo Dominik....");
 
         System.out.print(1143);
+=======
+        System.out.print("Hallo Dominik....");
+
+>>>>>>> Kilian
 
     }
 
