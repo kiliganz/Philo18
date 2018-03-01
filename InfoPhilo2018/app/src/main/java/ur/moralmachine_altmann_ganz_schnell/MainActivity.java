@@ -18,16 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         System.out.print(112);
     }
-
-
-    public void KilianFunction()  {
-
-
-        System.out.print("Hallo Dominik");
-
-
-    }
-
+    
     public void Dominik (){
         System.out.print("dere");
     }
