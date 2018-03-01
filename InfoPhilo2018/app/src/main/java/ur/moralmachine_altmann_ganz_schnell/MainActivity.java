@@ -11,8 +11,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ///Testkommentar
-        /// Testkommentar 2
-        ///Testkommentar
-        /// Testkommentar 2
+        // Aldu pusht was auf dem master-branch
     }
 }
