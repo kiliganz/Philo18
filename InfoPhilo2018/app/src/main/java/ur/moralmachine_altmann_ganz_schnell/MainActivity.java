@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     public void Kilian()  {
 
 
-        System.out.print("Hallo Dominik....");
+        System.out.print("Hallo Dominik... wie gehts ");
 
 
     }
