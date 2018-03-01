@@ -16,4 +16,8 @@ public class MainActivity extends AppCompatActivity {
         //sdhfihjsadöoif
         // Aldu push push push
     }
+
+    public void dominikFunction(){
+        System.out.print("Fuck you, Git!!!");
+    }
 }
