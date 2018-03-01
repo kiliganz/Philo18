@@ -28,4 +28,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.print(112);
     }
 
+    public void dominikFunction(){
+        System.out.print("Fuck you, Git!!!");
+    }
 }
