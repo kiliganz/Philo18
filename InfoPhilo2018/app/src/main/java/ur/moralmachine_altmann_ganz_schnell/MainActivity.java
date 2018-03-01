@@ -34,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
     public void testVoid2()  {
 
 
-<<<<<<< HEAD
+
         System.out.print("Hallo Dominik....");
-=======
+
         System.out.print(1143);
->>>>>>> master
+
     }
 
 }
