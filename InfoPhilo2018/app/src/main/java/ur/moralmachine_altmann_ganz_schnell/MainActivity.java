@@ -22,4 +22,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.print("Testbranch");
     }
 
+    public void KiliTest(){
+        // habedere
+    }
 }
