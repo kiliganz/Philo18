@@ -25,4 +25,9 @@ public class MainActivity extends AppCompatActivity {
     public void KiliTest(){
         // habedere
     }
+
+
+    public void neuerTest(){
+        System.out.println("Servus");
+    }
 }
