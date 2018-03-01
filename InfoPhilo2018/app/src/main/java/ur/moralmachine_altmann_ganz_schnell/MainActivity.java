@@ -10,11 +10,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ///Testkommentar
-        // Aldu hat hier was geändert
-        // söldkfjsaöld
-        //sdhfihjsadöoif
-        // Aldu push push push
     }
 
     public void dominikFunction(){
