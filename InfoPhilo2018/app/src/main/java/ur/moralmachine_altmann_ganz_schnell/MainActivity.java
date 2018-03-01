@@ -12,5 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
         ///Testkommentar
         /// Testkommentar 2
+        ///Testkommentar
+        /// Testkommentar 2
     }
 }
