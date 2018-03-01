@@ -13,4 +13,8 @@ public class MainActivity extends AppCompatActivity {
     }
     // first master comment
 
+    public void masterTestFunction(){
+        System.out.print("Master branch test");
+    }
+
 }
