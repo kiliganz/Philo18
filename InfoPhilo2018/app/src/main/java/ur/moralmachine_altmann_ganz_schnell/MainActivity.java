@@ -35,12 +35,16 @@ public class MainActivity extends AppCompatActivity {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         System.out.print("Hallo Dominik....");
 
         System.out.print(1143);
 =======
         System.out.print("Hallo Dominik....");
+=======
+        System.out.print("Hallo Dominik... wie gehts ");
+>>>>>>> Kilian
 
 >>>>>>> Kilian
 
