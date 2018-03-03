@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MoralMachine_Altmann_Ganz_Schnell</string>
     <string name="title_activity_game">GameActivity</string>
+    <string name="title_activity_info">infoActivity</string>
 </resources>

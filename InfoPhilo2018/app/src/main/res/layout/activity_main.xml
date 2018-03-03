@@ -10,32 +10,50 @@
         android:id="@+id/resultButton"
         android:layout_width="346dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="Result"
-        tools:layout_editor_absoluteX="19dp"
-        tools:layout_editor_absoluteY="350dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/infoButton"
         android:layout_width="346dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="Info"
-        tools:layout_editor_absoluteX="19dp"
-        tools:layout_editor_absoluteY="289dp" />
+        app:layout_constraintBottom_toTopOf="@+id/resultButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/startButton"
         android:layout_width="346dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="Start"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="231dp" />
+        app:layout_constraintBottom_toTopOf="@+id/infoButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="344dp"
         android:layout_height="182dp"
-        app:srcCompat="@mipmap/ic_launcher"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="29dp" />
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/startButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher" />
 
 </android.support.constraint.ConstraintLayout>
