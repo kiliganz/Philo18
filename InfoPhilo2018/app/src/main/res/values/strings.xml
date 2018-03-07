@@ -1,7 +1,25 @@
 <resources>
-    <string name="app_name">MoralMachine_Altmann_Ganz_Schnell</string>
+    <string name="app_name">MoralMachine</string>
     <string name="title_activity_game">GameActivity</string>
     <string name="title_activity_info">infoActivity</string>
+
     <string name="info_string">Lorem ipsum dolor....</string>
     <string name="title_activity_result">resultActivity</string>
+
+    
+    
+    <string-array name="Description_A">
+
+        <item> "In this case a car will suddenly break</item>
+
+
+    </string-array>
+
+    <string-array name="Consequences">
+
+        <item> "1 male \n1 female \n1 athlete"
+        </item>
+
+    </string-array>
+
 </resources>

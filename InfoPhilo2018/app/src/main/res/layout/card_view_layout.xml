@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/cardview_dark_background"
+        android:padding="10dp">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:addStatesFromChildren="false"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/firstImg"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/monster" />
+
+            <TextView
+                android:id="@+id/firstText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/firstImg"
+                android:text="In this case the car breaks"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/firstText"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/firstImg"
+                android:text="2 Frauen
+2 Maenner"
+                android:textColor="@color/colorAccent" />
+
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>
