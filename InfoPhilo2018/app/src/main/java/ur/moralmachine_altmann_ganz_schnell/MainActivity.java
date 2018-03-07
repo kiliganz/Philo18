@@ -35,9 +35,8 @@ public class MainActivity extends AppCompatActivity {
         Button infoButton = (Button) findViewById(R.id.startButton);
         infoButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-               // Intent intent = new Intent(MainActivity.this, gameActivity.class);
-                //startActivity(intent);
-                System.out.println("gameActivity");
+               Intent intent = new Intent(MainActivity.this, GameActivity.class);
+               startActivity(intent);
             }
         });
     }
@@ -48,9 +47,8 @@ public class MainActivity extends AppCompatActivity {
         Button infoButton = (Button) findViewById(R.id.resultButton);
         infoButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-               // Intent intent = new Intent(MainActivity.this, resultActivity.class);
-                //startActivity(intent);
-                System.out.println("resultActivity");
+               Intent intent = new Intent(MainActivity.this, resultActivity.class);
+               startActivity(intent);
             }
         });
     }
