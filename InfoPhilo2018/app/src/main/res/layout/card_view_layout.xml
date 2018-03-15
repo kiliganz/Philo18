@@ -24,17 +24,17 @@
             android:padding="10dp">
 
             <ImageView
-                android:id="@+id/firstImg"
+                android:id="@+id/sceneryImg"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/monster" />
 
             <TextView
-                android:id="@+id/firstText"
+                android:id="@+id/descriptionText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@+id/firstImg"
+                android:layout_toRightOf="@+id/sceneryImg"
                 android:text="In this case the car breaks"
                 android:textColor="@color/colorAccent"
                 android:textSize="18sp" />
@@ -42,12 +42,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/firstText"
+                android:layout_below="@+id/descriptionText"
                 android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@+id/firstImg"
+                android:layout_toRightOf="@+id/sceneryImg"
                 android:text="2 Frauen
 2 Maenner"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/colorAccent"
+                android:id="@+id/consequenceText"/>
 
 
         </RelativeLayout>

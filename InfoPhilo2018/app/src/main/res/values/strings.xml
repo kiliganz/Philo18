@@ -6,8 +6,8 @@
     <string name="info_string">Lorem ipsum dolor....</string>
     <string name="title_activity_result">resultActivity</string>
 
-    
-    
+    <string name="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
+
     <string-array name="Description_A">
 
         <item> "In this case a car will suddenly break</item>
