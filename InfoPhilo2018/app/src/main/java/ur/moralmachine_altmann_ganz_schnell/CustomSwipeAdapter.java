@@ -173,10 +173,6 @@ public class CustomSwipeAdapter extends PagerAdapter {
         final int dec13 = R.drawable.scenario13_dec2;
 
 
-        Log.d("StringID Scenario_1: ", "" + nameOfResourceOne);
-        Log.d("StringID Scenario_2: ", "" + nameOfResourceTwo);
-
-
         layoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final int imageCount = position + 1;
         View item_view;
@@ -196,22 +192,28 @@ public class CustomSwipeAdapter extends PagerAdapter {
 
                         switch (nameOfResourceOne) {
                             case scen1:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration = Toast.LENGTH_LONG;
                                 Toast toast = Toast.makeText(ctx, text, duration);
                                 toast.show();
-                                SubClass.submitValues(1, 0, 1, 0);
+
                                 ctx.startActivity(new Intent(ctx, Scenario_02.class));
 
 
-                                myRef.child("Nutzer").child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(DataSnapshot dataSnapshot) {
 
-                                        int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                        intervein += 1;
-                                        myRef.child("Nutzer").child("Intervein").setValue(intervein);
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
 
                                     }
 
@@ -222,12 +224,19 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     }
                                 });
 
-                                myRef.child("Nutzer").child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(DataSnapshot dataSnapshot) {
-                                        int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
-                                        prodriver += 0;
-                                        myRef.child("Nutzer").child("Intervein").setValue(prodriver);
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
 
                                     }
 
@@ -238,161 +247,1065 @@ public class CustomSwipeAdapter extends PagerAdapter {
 
                                     }
                                 });
-                                myRef.child("Nutzer").child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(DataSnapshot dataSnapshot) {
-                                        int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                        rules += 1;
-                                        myRef.child("Nutzer").child("Rules").setValue(rules);
-
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
                                     }
 
                                     @Override
                                     public void onCancelled(DatabaseError databaseError) {
                                         Log.d("Fehler: ", "Database Error");
-
-
                                     }
                                 });
 
-                                myRef.child("Nutzer").child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(DataSnapshot dataSnapshot) {
-                                        int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                        util += 1;
-                                        myRef.child("Nutzer").child("Util").setValue(util);
-
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
                                     }
 
                                     @Override
                                     public void onCancelled(DatabaseError databaseError) {
                                         Log.d("Fehler: ", "Database Error");
-
-
                                     }
                                 });
-
 
                                 break;
                             case scen2:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text2 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration2 = Toast.LENGTH_LONG;
                                 Toast toast2 = Toast.makeText(ctx, text2, duration2);
                                 toast2.show();
-                                SubClass.submitValues(1, 0, 1, 0);
-                                ctx.startActivity(new Intent(ctx, Scenario_03.class));
 
+                                ctx.startActivity(new Intent(ctx, Scenario_03.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
                                 break;
                             case scen3:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text3 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration3 = Toast.LENGTH_LONG;
                                 Toast toast3 = Toast.makeText(ctx, text3, duration3);
                                 toast3.show();
-                                SubClass.submitValues(1, 0, 1, 0);
-                                ctx.startActivity(new Intent(ctx, Scenario_04.class));
 
+                                ctx.startActivity(new Intent(ctx, Scenario_04.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
                                 break;
                             case scen4:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text4 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration4 = Toast.LENGTH_LONG;
                                 Toast toast4 = Toast.makeText(ctx, text4, duration4);
                                 toast4.show();
-                                SubClass.submitValues(1, 0, 1, 0);
-                                ctx.startActivity(new Intent(ctx, Scenario_05.class));
 
+                                ctx.startActivity(new Intent(ctx, Scenario_05.class));
                                 break;
                             case scen5:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text5 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration5 = Toast.LENGTH_LONG;
                                 Toast toast5 = Toast.makeText(ctx, text5, duration5);
                                 toast5.show();
-                                SubClass.submitValues(1, 0, 1, 0);
-                                ctx.startActivity(new Intent(ctx, Scenario_06.class));
 
+                                ctx.startActivity(new Intent(ctx, Scenario_06.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
                                 break;
                             case scen6:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text6 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration6 = Toast.LENGTH_LONG;
                                 Toast toast6 = Toast.makeText(ctx, text6, duration6);
                                 toast6.show();
-                                SubClass.submitValues(1, 0, 1, 0);
-                                ctx.startActivity(new Intent(ctx, Scenario_07.class));
 
+                                ctx.startActivity(new Intent(ctx, Scenario_07.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
                                 break;
                             case scen7:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text7 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration7 = Toast.LENGTH_LONG;
                                 Toast toast7 = Toast.makeText(ctx, text7, duration7);
                                 toast7.show();
-                                SubClass.submitValues(1, 0, 1, 0);
-                                ctx.startActivity(new Intent(ctx, Scenario_08.class));
 
+                                ctx.startActivity(new Intent(ctx, Scenario_08.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
                                 break;
                             case scen8:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text8 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration8 = Toast.LENGTH_LONG;
                                 Toast toast8 = Toast.makeText(ctx, text8, duration8);
                                 toast8.show();
-                                SubClass.submitValues(1, 0, 1, 0);
-                                ctx.startActivity(new Intent(ctx, Scenario_09.class));
 
+                                ctx.startActivity(new Intent(ctx, Scenario_09.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
                                 break;
                             case scen9:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text9 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration9 = Toast.LENGTH_LONG;
                                 Toast toast9 = Toast.makeText(ctx, text9, duration9);
                                 toast9.show();
-                                SubClass.submitValues(1, 0, 1, 0);
-                                ctx.startActivity(new Intent(ctx, Scenario_10.class));
 
+                                ctx.startActivity(new Intent(ctx, Scenario_10.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
                                 break;
                             case scen10:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text10 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration10 = Toast.LENGTH_LONG;
                                 Toast toast10 = Toast.makeText(ctx, text10, duration10);
                                 toast10.show();
-                                SubClass.submitValues(1, 0, 1, 0);
-                                ctx.startActivity(new Intent(ctx, Scenario_11.class));
 
+                                ctx.startActivity(new Intent(ctx, Scenario_11.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
                                 break;
                             case scen11:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text11 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration11 = Toast.LENGTH_LONG;
                                 Toast toast11 = Toast.makeText(ctx, text11, duration11);
                                 toast11.show();
-                                SubClass.submitValues(1, 0, 1, 0);
-                                ctx.startActivity(new Intent(ctx, Scenario_12.class));
 
+                                ctx.startActivity(new Intent(ctx, Scenario_12.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
                                 break;
                             case scen12:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text12 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration12 = Toast.LENGTH_LONG;
                                 Toast toast12 = Toast.makeText(ctx, text12, duration12);
                                 toast12.show();
-                                SubClass.submitValues(1, 0, 1, 0);
-                                ctx.startActivity(new Intent(ctx, Scenario_13.class));
 
+                                ctx.startActivity(new Intent(ctx, Scenario_13.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
                                 break;
                             case scen13:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text13 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration13 = Toast.LENGTH_LONG;
                                 Toast toast13 = Toast.makeText(ctx, text13, duration13);
                                 toast13.show();
-                                SubClass.submitValues(1, 0, 1, 0);
-                                ctx.startActivity(new Intent(ctx, MainActivity.class));
 
+                                ctx.startActivity(new Intent(ctx, MainActivity.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
                                 break;
 
                         }
@@ -401,142 +1314,1218 @@ public class CustomSwipeAdapter extends PagerAdapter {
                     case 1:
                         switch (nameOfResourceTwo) {
                             case dec1:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration = Toast.LENGTH_LONG;
                                 Toast toast = Toast.makeText(ctx, text, duration);
                                 toast.show();
-                                SubClass.submitValues(22, 0, 22, 0);
+
                                 ctx.startActivity(new Intent(ctx, Scenario_02.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
                                 break;
                             case dec2:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text2 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration2 = Toast.LENGTH_LONG;
                                 Toast toast2 = Toast.makeText(ctx, text2, duration2);
                                 toast2.show();
-                                SubClass.submitValues(1, 0, 1, 0);
+
                                 ctx.startActivity(new Intent(ctx, Scenario_03.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
 
                                 break;
                             case dec3:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text3 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration3 = Toast.LENGTH_LONG;
                                 Toast toast3 = Toast.makeText(ctx, text3, duration3);
                                 toast3.show();
-                                SubClass.submitValues(1, 0, 1, 0);
+
                                 ctx.startActivity(new Intent(ctx, Scenario_04.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
 
                                 break;
                             case dec4:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text4 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration4 = Toast.LENGTH_LONG;
                                 Toast toast4 = Toast.makeText(ctx, text4, duration4);
                                 toast4.show();
-                                SubClass.submitValues(1, 0, 1, 0);
+
                                 ctx.startActivity(new Intent(ctx, Scenario_05.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
 
                                 break;
                             case dec5:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text5 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration5 = Toast.LENGTH_LONG;
                                 Toast toast5 = Toast.makeText(ctx, text5, duration5);
                                 toast5.show();
-                                SubClass.submitValues(1, 0, 1, 0);
+
                                 ctx.startActivity(new Intent(ctx, Scenario_06.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
 
                                 break;
                             case dec6:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text6 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration6 = Toast.LENGTH_LONG;
                                 Toast toast6 = Toast.makeText(ctx, text6, duration6);
                                 toast6.show();
-                                SubClass.submitValues(1, 0, 1, 0);
+
                                 ctx.startActivity(new Intent(ctx, Scenario_07.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
 
                                 break;
                             case dec7:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text7 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration7 = Toast.LENGTH_LONG;
                                 Toast toast7 = Toast.makeText(ctx, text7, duration7);
                                 toast7.show();
-                                SubClass.submitValues(1, 0, 1, 0);
+
                                 ctx.startActivity(new Intent(ctx, Scenario_08.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
 
                                 break;
                             case dec8:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text8 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration8 = Toast.LENGTH_LONG;
                                 Toast toast8 = Toast.makeText(ctx, text8, duration8);
                                 toast8.show();
-                                SubClass.submitValues(1, 0, 1, 0);
+
                                 ctx.startActivity(new Intent(ctx, Scenario_09.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
 
                                 break;
                             case dec9:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text9 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration9 = Toast.LENGTH_LONG;
                                 Toast toast9 = Toast.makeText(ctx, text9, duration9);
                                 toast9.show();
-                                SubClass.submitValues(1, 0, 1, 0);
+
                                 ctx.startActivity(new Intent(ctx, Scenario_10.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
 
                                 break;
                             case dec10:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text10 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration10 = Toast.LENGTH_LONG;
                                 Toast toast10 = Toast.makeText(ctx, text10, duration10);
                                 toast10.show();
-                                SubClass.submitValues(1, 0, 1, 0);
+
                                 ctx.startActivity(new Intent(ctx, Scenario_11.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
 
                                 break;
                             case dec11:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text11 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration11 = Toast.LENGTH_LONG;
                                 Toast toast11 = Toast.makeText(ctx, text11, duration11);
                                 toast11.show();
-                                SubClass.submitValues(1, 0, 1, 0);
+
                                 ctx.startActivity(new Intent(ctx, Scenario_12.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
 
                                 break;
                             case dec12:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text12 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration12 = Toast.LENGTH_LONG;
                                 Toast toast12 = Toast.makeText(ctx, text12, duration12);
                                 toast12.show();
-                                SubClass.submitValues(1, 0, 1, 0);
+
                                 ctx.startActivity(new Intent(ctx, Scenario_13.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
 
                                 break;
                             case dec13:
-                                Log.d("Testausgabe", "Auswahl " + imageCount + " wurde gespeichert");
+
                                 CharSequence text13 = "Auswahl " + imageCount + " wurde gespeichert";
                                 int duration13 = Toast.LENGTH_LONG;
                                 Toast toast13 = Toast.makeText(ctx, text13, duration13);
                                 toast13.show();
-                                SubClass.submitValues(1, 0, 1, 0);
+
                                 ctx.startActivity(new Intent(ctx, MainActivity.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 3;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
 
                                 break;
                         }
                         break;
                 }
             }
-
-
         });
-
 
         ImageView imageView = (ImageView) item_view.findViewById(R.id.image_view);
         imageView.setOnClickListener(new View.OnClickListener()
@@ -554,10 +2543,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
 
 
                             case scen1:
-                                Log.d("Testmessage", "Bild 1 wurde angeklickt");
                                 myDialog = new Dialog(ctx);
+
                                 myDialog.setContentView(R.layout.popup_case_one_dec_one);
-                                txtClose = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose = myDialog.findViewById(R.id.CloseButton);
                                 txtClose.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -568,10 +2557,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
 
                                 break;
                             case scen2:
-                                Log.d("Testmessage", "Bild 1 wurde angeklickt");
                                 myDialog = new Dialog(ctx);
+
                                 myDialog.setContentView(R.layout.popup_case_two_dec_one);
-                                txtClose = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose = myDialog.findViewById(R.id.CloseButton);
                                 txtClose.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -582,10 +2571,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
 
                                 break;
                             case scen3:
-                                Log.d("Testmessage", "Bild 1 wurde angeklickt");
                                 myDialog = new Dialog(ctx);
+
                                 myDialog.setContentView(R.layout.popup_case_three_dec_one);
-                                txtClose = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose = myDialog.findViewById(R.id.CloseButton);
                                 txtClose.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -594,13 +2583,12 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 });
                                 myDialog.show();
 
-
                                 break;
                             case scen4:
-                                Log.d("Testmessage", "Bild 1 wurde angeklickt");
                                 myDialog = new Dialog(ctx);
+
                                 myDialog.setContentView(R.layout.popup_case_four_dec_one);
-                                txtClose = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose = myDialog.findViewById(R.id.CloseButton);
                                 txtClose.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -611,10 +2599,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
 
                                 break;
                             case scen5:
-                                Log.d("Testmessage", "Bild 1 wurde angeklickt");
                                 myDialog = new Dialog(ctx);
+
                                 myDialog.setContentView(R.layout.popup_case_five_dec_one);
-                                txtClose = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose = myDialog.findViewById(R.id.CloseButton);
                                 txtClose.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -622,13 +2610,13 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     }
                                 });
                                 myDialog.show();
-                                break;
 
+                                break;
                             case scen6:
-                                Log.d("Testmessage", "Bild 1 wurde angeklickt");
                                 myDialog = new Dialog(ctx);
+
                                 myDialog.setContentView(R.layout.popup_case_six_dec_one);
-                                txtClose = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose = myDialog.findViewById(R.id.CloseButton);
                                 txtClose.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -636,14 +2624,13 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     }
                                 });
                                 myDialog.show();
-                                break;
 
+                                break;
                             case scen7:
-
-                                Log.d("Testmessage", "Bild 1 wurde angeklickt");
                                 myDialog = new Dialog(ctx);
+
                                 myDialog.setContentView(R.layout.popup_case_seven_dec_one);
-                                txtClose = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose = myDialog.findViewById(R.id.CloseButton);
                                 txtClose.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -651,13 +2638,13 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     }
                                 });
                                 myDialog.show();
-                                break;
 
+                                break;
                             case scen8:
-                                Log.d("Testmessage", "Bild 1 wurde angeklickt");
                                 myDialog = new Dialog(ctx);
+
                                 myDialog.setContentView(R.layout.popup_case_eight_dec_one);
-                                txtClose = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose = myDialog.findViewById(R.id.CloseButton);
                                 txtClose.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -665,13 +2652,13 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     }
                                 });
                                 myDialog.show();
-                                break;
 
+                                break;
                             case scen9:
-                                Log.d("Testmessage", "Bild 1 wurde angeklickt");
                                 myDialog = new Dialog(ctx);
+
                                 myDialog.setContentView(R.layout.popup_case_nine_dec_one);
-                                txtClose = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose = myDialog.findViewById(R.id.CloseButton);
                                 txtClose.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -679,13 +2666,13 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     }
                                 });
                                 myDialog.show();
-                                break;
 
+                                break;
                             case scen10:
-                                Log.d("Testmessage", "Bild 1 wurde angeklickt");
                                 myDialog = new Dialog(ctx);
+
                                 myDialog.setContentView(R.layout.popup_case_ten_dec_one);
-                                txtClose = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose = myDialog.findViewById(R.id.CloseButton);
                                 txtClose.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -693,13 +2680,13 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     }
                                 });
                                 myDialog.show();
-                                break;
 
+                                break;
                             case scen11:
-                                Log.d("Testmessage", "Bild 1 wurde angeklickt");
                                 myDialog = new Dialog(ctx);
+
                                 myDialog.setContentView(R.layout.popup_case_eleven_dec_one);
-                                txtClose = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose = myDialog.findViewById(R.id.CloseButton);
                                 txtClose.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -707,13 +2694,13 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     }
                                 });
                                 myDialog.show();
-                                break;
 
+                                break;
                             case scen12:
-                                Log.d("Testmessage", "Bild 1 wurde angeklickt");
                                 myDialog = new Dialog(ctx);
+
                                 myDialog.setContentView(R.layout.popup_case_twelve_dec_one);
-                                txtClose = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose = myDialog.findViewById(R.id.CloseButton);
                                 txtClose.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -721,13 +2708,13 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     }
                                 });
                                 myDialog.show();
-                                break;
 
+                                break;
                             case scen13:
-                                Log.d("Testmessage", "Bild 1 wurde angeklickt");
                                 myDialog = new Dialog(ctx);
+
                                 myDialog.setContentView(R.layout.popup_case_thirteen_dec_one);
-                                txtClose = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose = myDialog.findViewById(R.id.CloseButton);
                                 txtClose.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -735,24 +2722,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     }
                                 });
                                 myDialog.show();
+
                                 break;
-
-
                         }
 
-
-                       /* Log.d("Testmessage", "Bild 1 wurde angeklickt");
-                        myDialog = new Dialog(ctx);
-                        TextView txtClose;
-                        myDialog.setContentView(R.layout.popup_case_one_dec_one);
-                        txtClose = (TextView) myDialog.findViewById(R.id.CloseButton);
-                        txtClose.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                myDialog.dismiss();
-                            }
-                        });
-                        myDialog.show();*/
 
                         break;
                     case 2:
@@ -763,9 +2736,8 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case dec1:
                                 myDialog = new Dialog(ctx);
 
-
                                 myDialog.setContentView(R.layout.popup_case_one_dec_two);
-                                txtClose2 = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose2 = myDialog.findViewById(R.id.CloseButton);
                                 txtClose2.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -778,9 +2750,8 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case dec2:
                                 myDialog = new Dialog(ctx);
 
-
                                 myDialog.setContentView(R.layout.popup_case_two_dec_two);
-                                txtClose2 = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose2 = myDialog.findViewById(R.id.CloseButton);
                                 txtClose2.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -788,15 +2759,13 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     }
                                 });
                                 myDialog.show();
-
 
                                 break;
                             case dec3:
                                 myDialog = new Dialog(ctx);
 
-
                                 myDialog.setContentView(R.layout.popup_case_three_dec_two);
-                                txtClose2 = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose2 = myDialog.findViewById(R.id.CloseButton);
                                 txtClose2.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -804,15 +2773,13 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     }
                                 });
                                 myDialog.show();
-
 
                                 break;
                             case dec4:
                                 myDialog = new Dialog(ctx);
 
-
                                 myDialog.setContentView(R.layout.popup_case_four_dec_two);
-                                txtClose2 = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose2 = myDialog.findViewById(R.id.CloseButton);
                                 txtClose2.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -820,15 +2787,13 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     }
                                 });
                                 myDialog.show();
-
 
                                 break;
                             case dec5:
                                 myDialog = new Dialog(ctx);
 
-
                                 myDialog.setContentView(R.layout.popup_case_five_dec_two);
-                                txtClose2 = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose2 = myDialog.findViewById(R.id.CloseButton);
                                 txtClose2.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -837,14 +2802,12 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 });
                                 myDialog.show();
 
-
                                 break;
                             case dec6:
                                 myDialog = new Dialog(ctx);
 
-
                                 myDialog.setContentView(R.layout.popup_case_six_dec_two);
-                                txtClose2 = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose2 = myDialog.findViewById(R.id.CloseButton);
                                 txtClose2.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -857,9 +2820,8 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case dec7:
                                 myDialog = new Dialog(ctx);
 
-
                                 myDialog.setContentView(R.layout.popup_case_seven_dec_two);
-                                txtClose2 = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose2 = myDialog.findViewById(R.id.CloseButton);
                                 txtClose2.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -867,15 +2829,13 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     }
                                 });
                                 myDialog.show();
-
 
                                 break;
                             case dec8:
                                 myDialog = new Dialog(ctx);
 
-
                                 myDialog.setContentView(R.layout.popup_case_eight_dec_two);
-                                txtClose2 = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose2 = myDialog.findViewById(R.id.CloseButton);
                                 txtClose2.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -883,15 +2843,13 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     }
                                 });
                                 myDialog.show();
-
 
                                 break;
                             case dec9:
                                 myDialog = new Dialog(ctx);
 
-
                                 myDialog.setContentView(R.layout.popup_case_nine_dec_two);
-                                txtClose2 = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose2 = myDialog.findViewById(R.id.CloseButton);
                                 txtClose2.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -900,14 +2858,12 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 });
                                 myDialog.show();
 
-
                                 break;
                             case dec10:
                                 myDialog = new Dialog(ctx);
 
-
                                 myDialog.setContentView(R.layout.popup_case_ten_dec_two);
-                                txtClose2 = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose2 = myDialog.findViewById(R.id.CloseButton);
                                 txtClose2.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -920,9 +2876,8 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case dec11:
                                 myDialog = new Dialog(ctx);
 
-
                                 myDialog.setContentView(R.layout.popup_case_eleven_dec_two);
-                                txtClose2 = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose2 = myDialog.findViewById(R.id.CloseButton);
                                 txtClose2.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -931,14 +2886,12 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 });
                                 myDialog.show();
 
-
                                 break;
                             case dec12:
                                 myDialog = new Dialog(ctx);
 
-
                                 myDialog.setContentView(R.layout.popup_case_twelve_dec_two);
-                                txtClose2 = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose2 = myDialog.findViewById(R.id.CloseButton);
                                 txtClose2.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -951,9 +2904,8 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case dec13:
                                 myDialog = new Dialog(ctx);
 
-
                                 myDialog.setContentView(R.layout.popup_case_thirteen_dec_two);
-                                txtClose2 = (TextView) myDialog.findViewById(R.id.CloseButton);
+                                txtClose2 = myDialog.findViewById(R.id.CloseButton);
                                 txtClose2.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -963,39 +2915,18 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 myDialog.show();
 
                                 break;
-
                         }
-                        /*Log.d("Testmessage", "Bild 2 wurde angeklickt");
-
-
-                        myDialog = new Dialog(ctx);
-
-                        myDialog.setContentView(R.layout.popup_case_one_dec_two);
-                        txtClose = (TextView) myDialog.findViewById(R.id.CloseButton);
-                        txtClose.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                myDialog.dismiss();
-                            }
-                        });
-                        myDialog.show();*/
                         break;
                 }
 
-
             }
-
 
         });
 
-        TextView textView = (TextView) item_view.findViewById(R.id.image_description);
-
-
+        TextView textView = item_view.findViewById(R.id.image_description);
         imageView.setImageResource(imageResource[position]);
-
         textView.setText("Szenario " + imageCount);
         container.addView(item_view);
-
 
         return item_view;
 
@@ -1006,16 +2937,12 @@ public class CustomSwipeAdapter extends PagerAdapter {
         return imageResource.length;
     }
 
-
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-
 
         container.removeView((RelativeLayout) object);
         super.destroyItem(container, position, object);
 
-
     }
-
 
 }
