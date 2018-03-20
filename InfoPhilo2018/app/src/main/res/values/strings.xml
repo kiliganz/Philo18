@@ -8,18 +8,83 @@
 
     <string name="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
 
-    <string-array name="Description_A">
+    <string name="scen_1_dec1">In diesem Fall fährt das autonome Fahrzeug mit Bremsenversagen geradeaus weiter und kollidiert mit einem Fußgänger, der gerade die Straße überquert. Das Resultat:
+Tot: 1 Fußgänger</string>
+    <string name="scen_2_dec1">In diesem Fall fährt das autonome Fahrzeug mit Bremsenversagen geradeaus weiter und kollidiert mit einem Fußgänger, der gerade die Straße überquert. Das Resultat:
+Tot: 1 Fußgänger</string>
+    <string name="scen_3_dec1">In diesem Fall fährt das autonome Fahrzeug mit Bremsenversagen geradeaus weiter und kollidiert mit zwei Fußgänger, die gerade die Straße überqueren. Das Resultat:
+Tot: 2 Fußgänger</string>
+    <string name="scen_4_dec1">In diesem Fall fährt das autonome Fahrzeug mit Bremsenversagen geradeaus weiter und kollidiert mit einem Fußgänger, der gerade die Straße überquert. Das Resultat:
+Tot: 1 Fußgänger</string>
+    <string name="scen_5_dec1">In diesem Fall fährt das autonome Fahrzeug mit Bremsenversagen geradeaus weiter und kollidiert mit einem Fußgänger, der gerade die Straße überquert. Das Resultat:
+Tot: 1 Fußgänger
+Beachte: Der Fußgänger überquert die Straße bei Grün und hält sich damit an das Gesetz.</string>
+    <string name="scen_6_dec1">In diesem Fall fährt das autonome Fahrzeug mit Bremsenversagen geradeaus weiter und in zwei Fußgänger, die gerade die Straße überqueren. Das Resultat:
+Tot: 2 Fußgänger
+Beachte: Die Fußgänger überqueren die Straße bei Rot und halten sich damit nicht an das Gesetz.</string>
+    <string name="scen_7_dec1">In diesem Fall fährt das autonome Fahrzeug mit Bremsenversagen geradeaus weiter und kollidiert mit einem Fußgänger, der gerade die Straße überquert. Das Resultat:
+Tot: 1 Fußgänger
+Beachte: Der Fußgänger überquert die Straße bei Rot und hält sich damit nicht an das Gesetz.</string>
+    <string name="scen_8_dec1">In diesem Fall fährt das autonome Fahrzeug mit Bremsenversagen geradeaus weiter und in drei Fußgänger, die gerade die Straße überqueren. Das Resultat:
+Tot: 3 Fußgänger
+Beachte: Die Fußgänger überqueren die Straße bei Rot und halten sich damit nicht an das Gesetz.</string>
+    <string name="scen_9_dec1">In diesem Fall fährt das autonome Fahrzeug mit Bremsenversagen geradeaus weiter und kollidiert mit einem Fußgänger, der gerade die Straße überquert. Das Resultat:
+Tot: 1 Fußgänger</string>
+    <string name="scen_10_dec1">In diesem Fall fährt das autonome Fahrzeug mit Bremsenversagen geradeaus weiter und in zwei Fußgänger, die gerade die Straße überqueren. Das Resultat:
+Tot: 2 Fußgänger
+Beachte: Die Fußgänger überqueren die Straße bei Rot und halten sich damit nicht an das </string>
+    <string name="scen_11_dec1">In diesem Fall fährt das autonome Fahrzeug mit Bremsenversagen geradeaus weiter und kollidiert mit einer Straßensperre aus Beton. Das Resultat:
+Tot: 1 Fahrzeuginsasse</string>
+    <string name="scen_12_dec1">In diesem Fall fährt das autonome Fahrzeug mit Bremsenversagen geradeaus weiter und kollidiert mit einer Straßensperre aus Beton. Das Resultat:
+Tot: 4 Fahrzeuginsassen</string>
+    <string name="scen_13_dec1">In diesem Fall fährt das autonome Fahrzeug mit Bremsenversagen geradeaus weiter und kollidiert mit einer Straßensperre aus Beton. Das Resultat:
+Tot: 3 Fahrzeuginsassen</string>
 
-        <item> "In this case a car will suddenly break</item>
+    <string name="scen_1_dec2">In diesem Fall schwenkt das autonome Fahrzeug mit Bremsenversagen ab und kollidiert mit einem Fußgänger, der gerade die Straße überquert. Das Resultat:
+Tot: 1 Fußgänger
+Beachte: Hier muss das Fahrzeug aktiv eingreifen um abzuschwenken.
+ </string>
+    <string name="scen_2_dec2">In diesem Fall schwenkt das autonome Fahrzeug mit Bremsenversagen ab und kollidiert mit einer Straßensperre aus Beton. Das Resultat:
+Tot: 1 Fahrzeuginsasse
+Beachte: Hier muss das Fahrzeug aktiv eingreifen um abzuschwenken.
+ </string>
+    <string name="scen_3_dec2">In diesem Fall schwenkt das autonome Fahrzeug mit Bremsenversagen ab und kollidiert mit einer Straßensperre aus Beton. Das Resultat:
+Tot: 1 Fahrzeuginsasse
+Beachte: Hier muss das Fahrzeug aktiv eingreifen um abzuschwenken.
+ </string>
+    <string name="scen_4_dec2">In diesem Fall schwenkt das autonome Fahrzeug mit Bremsenversagen ab und kollidiert mit einer Straßensperre aus Beton. Das Resultat:
+Tot: 1 Fahrzeuginsasse
+Beachte: Hier muss das Fahrzeug aktiv eingreifen um abzuschwenken.</string>
+    <string name="scen_5_dec2">In diesem Fall schwenkt das autonome Fahrzeug mit Bremsenversagen ab und kollidiert mit einem Fußgänger, der gerade die Straße überquert. Das Resultat:
+Tot: 1 Fußgänger
+Beachte: Der Fußgänger überquert die Straße bei Rot und hält sich damit nicht an das Gesetz. Hier muss das Fahrzeug aktiv eingreifen um abzuschwenken.
+ </string>
+    <string name="scen_6_dec2">In diesem Fall schwenkt das autonome Fahrzeug mit Bremsenversagen ab und kollidiert mit einer Straßensperre aus Beton. Das Resultat:
+Tot: 1 Fahrzeuginsasse
+Beachte: Hier muss das Fahrzeug aktiv eingreifen um abzuschwenken.</string>
+    <string name="scen_7_dec2">In diesem Fall schwenkt das autonome Fahrzeug mit Bremsenversagen ab und kollidiert mit einem Fußgänger, der gerade die Straße überquert. Das Resultat:
+Tot: 1 Fußgänger
+Beachte: Der Fußgänger überquert die Straße bei Grün und hält sich damit an das Gesetz. Hier muss das Fahrzeug aktiv eingreifen um abzuschwenken.</string>
+    <string name="scen_8_dec2">In diesem Fall schwenkt das autonome Fahrzeug mit Bremsenversagen ab und kollidiert mit einem Fußgänger, der gerade die Straße überquert. Das Resultat:
+Tot: 1 Fußgänger
+Beachte: Der Fußgänger überquert die Straße bei Grün und hält sich damit an das Gesetz. Hier muss das Fahrzeug aktiv eingreifen um abzuschwenken.
+</string>
+    <string name="scen_9_dec2">In diesem Fall schwenkt das autonome Fahrzeug mit Bremsenversagen ab und kollidiert mit zwei Fußgängern, die gerade die Straße überqueren. Das Resultat:
+Tot: 2 Fußgänger
+Beachte: Hier muss das Fahrzeug aktiv eingreifen um abzuschwenken.
+ </string>
+    <string name="scen_10_dec2">In diesem Fall schwenkt das autonome Fahrzeug mit Bremsenversagen ab und kollidiert mit einer Straßensperre aus Beton. Das Resultat:
+Tot: 1 Fahrzeuginsasse
+Beachte: Hier muss das Fahrzeug aktiv eingreifen um abzuschwenken.</string>
+    <string name="scen_11_dec2">In diesem Fall schwenkt das autonome Fahrzeug mit Bremsenversagen ab kollidiert mit zwei Fußgängern, die gerade die Straße überqueren. Das Resultat:
+Tot: 2 Fußgänger
+Beachte: Die Fußgänger überqueren die Straße bei Grün und halten sich damit an das Gesetz. Hier muss das Fahrzeug aktiv eingreifen um abzuschwenken.</string>
+    <string name="scen_12_dec2">In diesem Fall schwenkt das autonome Fahrzeug mit Bremsenversagen ab und kollidiert mit fünf Fußgängern, die gerade die Straße überqueren. Das Resultat:
+Tot: 5 Fußgänger
+Beachte: Die Fußgänger überqueren die Straße bei Rot und halten sich damit nicht an das Gesetz. Hier muss das Fahrzeug aktiv eingreifen um abzuschwenken.</string>
+    <string name="scen_13_dec2">In diesem Fall schwenkt das autonome Fahrzeug mit Bremsenversagen ab und kollidiert mit drei Fußgängern, die gerade die Straße überqueren. Das Resultat:
+Tot: 3 Fußgänger
+Beachte: Hier muss das Fahrzeug aktiv eingreifen um abzuschwenken.</string>
 
-
-    </string-array>
-
-    <string-array name="Consequences">
-
-        <item> "1 male \n1 female \n1 athlete"
-        </item>
-
-    </string-array>
 
 </resources>

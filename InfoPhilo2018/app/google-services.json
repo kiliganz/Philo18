@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "342752870494",
+    "firebase_url": "https://philo18-8cfca.firebaseio.com",
+    "project_id": "philo18-8cfca",
+    "storage_bucket": "philo18-8cfca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342752870494:android:8f35ce8bccc6a83e",
+        "android_client_info": {
+          "package_name": "ur.moralmachine_altmann_ganz_schnell"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "342752870494-ge2f9124hu5bcjde6cb43v074peu6pui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCB-w-de7rqEBZ6OxCLG7nS_HiFnsTY5E4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
