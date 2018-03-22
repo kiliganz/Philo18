@@ -66,6 +66,8 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(start);
                 Log.d("Aktueller Nutzer: ", "" + userId);
 
+
+
             }
         });
 

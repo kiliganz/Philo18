@@ -199,6 +199,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 toast.show();
 
                                 ctx.startActivity(new Intent(ctx, Scenario_02.class));
+                                updateAvgStats(0, 0, 0, 0);
 
 
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -208,10 +209,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -252,10 +253,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            rules += 1;
+                                            rules += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         } else {
-                                            int rules = 1;
+                                            int rules = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         }
                                     }
@@ -271,10 +272,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -292,6 +293,8 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration2 = Toast.LENGTH_LONG;
                                 Toast toast2 = Toast.makeText(ctx, text2, duration2);
                                 toast2.show();
+                                updateAvgStats(0, 1, 0, 0);
+
 
                                 ctx.startActivity(new Intent(ctx, Scenario_03.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -301,10 +304,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -323,10 +326,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
 
                                         if (dataSnapshot.getValue() != null) {
                                             int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            prodriver += 0;
+                                            prodriver += 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
                                         } else {
-                                            int prodriver = 0;
+                                            int prodriver = 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
                                         }
 
@@ -345,10 +348,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            rules += 1;
+                                            rules += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         } else {
-                                            int rules = 1;
+                                            int rules = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         }
                                     }
@@ -364,10 +367,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -384,6 +387,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration3 = Toast.LENGTH_LONG;
                                 Toast toast3 = Toast.makeText(ctx, text3, duration3);
                                 toast3.show();
+                                updateAvgStats(0, 1, 0, 0);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_04.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -393,10 +397,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -415,10 +419,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
 
                                         if (dataSnapshot.getValue() != null) {
                                             int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            prodriver += 0;
+                                            prodriver += 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
                                         } else {
-                                            int prodriver = 0;
+                                            int prodriver = 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
                                         }
 
@@ -437,10 +441,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            rules += 1;
+                                            rules += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         } else {
-                                            int rules = 1;
+                                            int rules = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         }
                                     }
@@ -456,10 +460,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -476,8 +480,92 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration4 = Toast.LENGTH_LONG;
                                 Toast toast4 = Toast.makeText(ctx, text4, duration4);
                                 toast4.show();
+                                updateAvgStats(0, 1, 1, 0);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_05.class));
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+
+                                            int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            intervein += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        } else {
+                                            int intervein = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.getValue() != null) {
+                                            int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            prodriver += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        } else {
+                                            int prodriver = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+
+
+                                    }
+                                });
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int rules = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            rules += 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        } else {
+                                            int rules = 1;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
+
+                                myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.getValue() != null) {
+                                            int util = Integer.valueOf(dataSnapshot.getValue().toString());
+                                            util += 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        } else {
+                                            int util = 0;
+                                            myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        Log.d("Fehler: ", "Database Error");
+                                    }
+                                });
                                 break;
                             case scen5:
 
@@ -485,6 +573,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration5 = Toast.LENGTH_LONG;
                                 Toast toast5 = Toast.makeText(ctx, text5, duration5);
                                 toast5.show();
+                                updateAvgStats(0, 0, 0, 0);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_06.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -494,10 +583,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -538,10 +627,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            rules += 1;
+                                            rules += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         } else {
-                                            int rules = 1;
+                                            int rules = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         }
                                     }
@@ -557,10 +646,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -577,6 +666,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration6 = Toast.LENGTH_LONG;
                                 Toast toast6 = Toast.makeText(ctx, text6, duration6);
                                 toast6.show();
+                                updateAvgStats(0, 1, 1, 0);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_07.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -586,10 +676,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -608,10 +698,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
 
                                         if (dataSnapshot.getValue() != null) {
                                             int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            prodriver += 0;
+                                            prodriver += 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
                                         } else {
-                                            int prodriver = 0;
+                                            int prodriver = 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
                                         }
 
@@ -649,10 +739,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -669,6 +759,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration7 = Toast.LENGTH_LONG;
                                 Toast toast7 = Toast.makeText(ctx, text7, duration7);
                                 toast7.show();
+                                updateAvgStats(0, 0, 1, 0);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_08.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -678,10 +769,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -741,10 +832,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -761,6 +852,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration8 = Toast.LENGTH_LONG;
                                 Toast toast8 = Toast.makeText(ctx, text8, duration8);
                                 toast8.show();
+                                updateAvgStats(0, 0, 1, 0);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_09.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -770,10 +862,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -833,10 +925,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -853,6 +945,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration9 = Toast.LENGTH_LONG;
                                 Toast toast9 = Toast.makeText(ctx, text9, duration9);
                                 toast9.show();
+                                updateAvgStats(0, 0, 0, 0);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_10.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -862,10 +955,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -906,10 +999,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            rules += 1;
+                                            rules += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         } else {
-                                            int rules = 1;
+                                            int rules = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         }
                                     }
@@ -925,10 +1018,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -945,6 +1038,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration10 = Toast.LENGTH_LONG;
                                 Toast toast10 = Toast.makeText(ctx, text10, duration10);
                                 toast10.show();
+                                updateAvgStats(0, 1, 1, 0);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_11.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -954,10 +1048,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -976,10 +1070,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
 
                                         if (dataSnapshot.getValue() != null) {
                                             int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            prodriver += 0;
+                                            prodriver += 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
                                         } else {
-                                            int prodriver = 0;
+                                            int prodriver = 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
                                         }
 
@@ -1017,10 +1111,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -1037,6 +1131,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration11 = Toast.LENGTH_LONG;
                                 Toast toast11 = Toast.makeText(ctx, text11, duration11);
                                 toast11.show();
+                                updateAvgStats(0, 0, 1, 0);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_12.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -1046,10 +1141,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -1109,10 +1204,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -1129,6 +1224,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration12 = Toast.LENGTH_LONG;
                                 Toast toast12 = Toast.makeText(ctx, text12, duration12);
                                 toast12.show();
+                                updateAvgStats(0, 0, 0, 1);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_13.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -1138,10 +1234,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -1182,10 +1278,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            rules += 1;
+                                            rules += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         } else {
-                                            int rules = 1;
+                                            int rules = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         }
                                     }
@@ -1221,8 +1317,9 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration13 = Toast.LENGTH_LONG;
                                 Toast toast13 = Toast.makeText(ctx, text13, duration13);
                                 toast13.show();
+                                updateAvgStats(0, 0, 0, 0);
 
-                                ctx.startActivity(new Intent(ctx, MainActivity.class));
+                                ctx.startActivity(new Intent(ctx, resultActivity.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -1230,10 +1327,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -1274,10 +1371,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            rules += 1;
+                                            rules += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         } else {
-                                            int rules = 1;
+                                            int rules = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         }
                                     }
@@ -1293,10 +1390,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -1319,6 +1416,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration = Toast.LENGTH_LONG;
                                 Toast toast = Toast.makeText(ctx, text, duration);
                                 toast.show();
+                                updateAvgStats(1, 0, 0, 0);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_02.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -1328,10 +1426,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -1372,10 +1470,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            rules += 1;
+                                            rules += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         } else {
-                                            int rules = 1;
+                                            int rules = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         }
                                     }
@@ -1391,10 +1489,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -1411,6 +1509,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration2 = Toast.LENGTH_LONG;
                                 Toast toast2 = Toast.makeText(ctx, text2, duration2);
                                 toast2.show();
+                                updateAvgStats(1, 0, 0, 0);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_03.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -1420,10 +1519,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -1464,10 +1563,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            rules += 1;
+                                            rules += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         } else {
-                                            int rules = 1;
+                                            int rules = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         }
                                     }
@@ -1483,10 +1582,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -1504,6 +1603,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration3 = Toast.LENGTH_LONG;
                                 Toast toast3 = Toast.makeText(ctx, text3, duration3);
                                 toast3.show();
+                                updateAvgStats(0, 0, 0, 1);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_04.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -1513,10 +1613,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -1557,10 +1657,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            rules += 1;
+                                            rules += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         } else {
-                                            int rules = 1;
+                                            int rules = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         }
                                     }
@@ -1597,6 +1697,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration4 = Toast.LENGTH_LONG;
                                 Toast toast4 = Toast.makeText(ctx, text4, duration4);
                                 toast4.show();
+                                updateAvgStats(1, 0, 0, 0);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_05.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -1606,10 +1707,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -1650,10 +1751,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            rules += 1;
+                                            rules += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         } else {
-                                            int rules = 1;
+                                            int rules = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         }
                                     }
@@ -1669,10 +1770,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -1690,6 +1791,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration5 = Toast.LENGTH_LONG;
                                 Toast toast5 = Toast.makeText(ctx, text5, duration5);
                                 toast5.show();
+                                updateAvgStats(1, 0, 1, 0);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_06.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -1699,10 +1801,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -1762,10 +1864,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -1783,6 +1885,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration6 = Toast.LENGTH_LONG;
                                 Toast toast6 = Toast.makeText(ctx, text6, duration6);
                                 toast6.show();
+                                updateAvgStats(0, 0, 0, 1);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_07.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -1792,10 +1895,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -1836,10 +1939,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            rules += 1;
+                                            rules += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         } else {
-                                            int rules = 1;
+                                            int rules = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         }
                                     }
@@ -1876,6 +1979,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration7 = Toast.LENGTH_LONG;
                                 Toast toast7 = Toast.makeText(ctx, text7, duration7);
                                 toast7.show();
+                                updateAvgStats(1, 0, 0, 0);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_08.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -1885,10 +1989,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -1929,10 +2033,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            rules += 1;
+                                            rules += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         } else {
-                                            int rules = 1;
+                                            int rules = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         }
                                     }
@@ -1948,10 +2052,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -1969,6 +2073,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration8 = Toast.LENGTH_LONG;
                                 Toast toast8 = Toast.makeText(ctx, text8, duration8);
                                 toast8.show();
+                                updateAvgStats(0, 0, 0, 1);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_09.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -1978,10 +2083,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -2022,10 +2127,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            rules += 1;
+                                            rules += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         } else {
-                                            int rules = 1;
+                                            int rules = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         }
                                     }
@@ -2062,6 +2167,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration9 = Toast.LENGTH_LONG;
                                 Toast toast9 = Toast.makeText(ctx, text9, duration9);
                                 toast9.show();
+                                updateAvgStats(1, 0, 0, 1);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_10.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -2071,10 +2177,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -2115,10 +2221,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            rules += 1;
+                                            rules += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         } else {
-                                            int rules = 1;
+                                            int rules = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         }
                                     }
@@ -2155,6 +2261,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration10 = Toast.LENGTH_LONG;
                                 Toast toast10 = Toast.makeText(ctx, text10, duration10);
                                 toast10.show();
+                                updateAvgStats(1, 0, 0, 1);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_11.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -2164,10 +2271,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -2208,10 +2315,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            rules += 1;
+                                            rules += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         } else {
-                                            int rules = 1;
+                                            int rules = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         }
                                     }
@@ -2248,6 +2355,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration11 = Toast.LENGTH_LONG;
                                 Toast toast11 = Toast.makeText(ctx, text11, duration11);
                                 toast11.show();
+                                updateAvgStats(1, 1, 0, 0);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_12.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -2257,10 +2365,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -2279,10 +2387,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
 
                                         if (dataSnapshot.getValue() != null) {
                                             int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            prodriver += 0;
+                                            prodriver += 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
                                         } else {
-                                            int prodriver = 0;
+                                            int prodriver = 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
                                         }
 
@@ -2301,10 +2409,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            rules += 1;
+                                            rules += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         } else {
-                                            int rules = 1;
+                                            int rules = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         }
                                     }
@@ -2320,10 +2428,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -2341,6 +2449,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration12 = Toast.LENGTH_LONG;
                                 Toast toast12 = Toast.makeText(ctx, text12, duration12);
                                 toast12.show();
+                                updateAvgStats(1, 1, 1, 0);
 
                                 ctx.startActivity(new Intent(ctx, Scenario_13.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -2350,10 +2459,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -2372,10 +2481,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
 
                                         if (dataSnapshot.getValue() != null) {
                                             int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            prodriver += 0;
+                                            prodriver += 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
                                         } else {
-                                            int prodriver = 0;
+                                            int prodriver = 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
                                         }
 
@@ -2413,10 +2522,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -2434,8 +2543,9 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                 int duration13 = Toast.LENGTH_LONG;
                                 Toast toast13 = Toast.makeText(ctx, text13, duration13);
                                 toast13.show();
+                                updateAvgStats(1, 1, 0, 0);
 
-                                ctx.startActivity(new Intent(ctx, MainActivity.class));
+                                ctx.startActivity(new Intent(ctx, resultActivity.class));
                                 myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -2443,10 +2553,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                         if (dataSnapshot.getValue() != null) {
 
                                             int intervein = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            intervein += 3;
+                                            intervein += 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         } else {
-                                            int intervein = 3;
+                                            int intervein = 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Intervein").setValue(intervein);
                                         }
 
@@ -2465,10 +2575,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
 
                                         if (dataSnapshot.getValue() != null) {
                                             int prodriver = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            prodriver += 0;
+                                            prodriver += 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
                                         } else {
-                                            int prodriver = 0;
+                                            int prodriver = 1;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Prodriver").setValue(prodriver);
                                         }
 
@@ -2487,10 +2597,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int rules = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            rules += 1;
+                                            rules += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         } else {
-                                            int rules = 1;
+                                            int rules = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Rules").setValue(rules);
                                         }
                                     }
@@ -2506,10 +2616,10 @@ public class CustomSwipeAdapter extends PagerAdapter {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if (dataSnapshot.getValue() != null) {
                                             int util = Integer.valueOf(dataSnapshot.getValue().toString());
-                                            util += 1;
+                                            util += 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         } else {
-                                            int util = 1;
+                                            int util = 0;
                                             myRef.child("Nutzer").child("User: " + LoginActivity.userId).child("Util").setValue(util);
                                         }
                                     }
@@ -2929,6 +3039,82 @@ public class CustomSwipeAdapter extends PagerAdapter {
         container.addView(item_view);
 
         return item_view;
+
+    }
+
+    public void updateAvgStats(final int intervein, final int prodriver, final int rules, final int util) {
+
+
+        myRef.child("Average").child("Intervein").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getValue() != null) {
+                    int avg = Integer.valueOf(dataSnapshot.getValue().toString());
+                    avg += intervein;
+                    myRef.child("Average").child("Intervein").setValue(avg);
+                } else {
+                    myRef.child("Average").child("Intervein").setValue(intervein);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("Fehler: ", "Database Error");
+            }
+        });
+
+        myRef.child("Average").child("Prodriver").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getValue() != null) {
+                    int avg = Integer.valueOf(dataSnapshot.getValue().toString());
+                    avg += prodriver;
+                    myRef.child("Average").child("Prodriver").setValue(avg);
+                } else {
+                    myRef.child("Average").child("Prodriver").setValue(prodriver);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("Fehler: ", "Database Error");
+            }
+        });
+        myRef.child("Average").child("Rules").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getValue() != null) {
+                    int avg = Integer.valueOf(dataSnapshot.getValue().toString());
+                    avg += rules;
+                    myRef.child("Average").child("Rules").setValue(avg);
+                } else {
+                    myRef.child("Average").child("Rules").setValue(rules);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("Fehler: ", "Database Error");
+            }
+        });
+        myRef.child("Average").child("Util").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getValue() != null) {
+                    int avg = Integer.valueOf(dataSnapshot.getValue().toString());
+                    avg += util;
+                    myRef.child("Average").child("Util").setValue(avg);
+                } else {
+                    myRef.child("Average").child("Util").setValue(util);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("Fehler: ", "Database Error");
+            }
+        });
+
 
     }
 

@@ -2,9 +2,11 @@
     <string name="app_name">MoralMachine</string>
     <string name="title_activity_game">GameActivity</string>
     <string name="title_activity_info">infoActivity</string>
-
     <string name="info_string">Lorem ipsum dolor....</string>
     <string name="title_activity_result">resultActivity</string>
+
+
+
 
     <string name="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
 
@@ -85,6 +87,13 @@ Beachte: Die Fußgänger überqueren die Straße bei Rot und halten sich damit n
     <string name="scen_13_dec2">In diesem Fall schwenkt das autonome Fahrzeug mit Bremsenversagen ab und kollidiert mit drei Fußgängern, die gerade die Straße überqueren. Das Resultat:
 Tot: 3 Fußgänger
 Beachte: Hier muss das Fahrzeug aktiv eingreifen um abzuschwenken.</string>
+
+    <string name="backToMenu">Zurück zum Hauptmenü</string>
+    <string name="resetStats">Auswertung zurücksetzen</string>
+    <string name="interveinDescription">Interventionen des Fahrzeugs</string>
+    <string name="utilDescription">Utilitaristisch gehandelt</string>
+    <string name="rulesDescription">Regeln eingehalten</string>
+    <string name="proDriverDescription">Pro Fahrer gehandelt</string>
 
 
 </resources>

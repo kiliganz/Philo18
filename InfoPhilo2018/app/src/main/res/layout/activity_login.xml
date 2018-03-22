@@ -8,17 +8,12 @@
 
     <Button
         android:id="@+id/firebaseLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="225dp"
-        android:text="Login"
-        />
+        android:text="Bildschirm berühren, um die Moral Machine zu starten"
+        android:textSize="50sp"/>
 
 
-    <Button
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:id="@+id/testButton"/>
 </RelativeLayout>
