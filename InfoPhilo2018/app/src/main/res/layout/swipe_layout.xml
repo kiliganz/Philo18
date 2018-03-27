@@ -35,7 +35,9 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="5dp"
         android:gravity="center"
-        android:text="Confirm">
+        android:text="Confirm"
+        android:textColor="#ffffff"
+        android:background="#90000000">
 
     </Button>
 

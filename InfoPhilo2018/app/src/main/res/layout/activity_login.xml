@@ -4,16 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ur.moralmachine_altmann_ganz_schnell.LoginActivity">
+    tools:context="ur.moralmachine_altmann_ganz_schnell.LoginActivity"
+    android:background="@drawable/background">
 
     <Button
         android:id="@+id/firebaseLogin"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
         android:layout_centerHorizontal="true"
-        android:text="Bildschirm berühren, um die Moral Machine zu starten"
-        android:textSize="50sp"/>
+        android:layout_centerVertical="true"
+        android:text="Tippen um zu starten"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:background="#90000000"/>
+
 
 
 </RelativeLayout>

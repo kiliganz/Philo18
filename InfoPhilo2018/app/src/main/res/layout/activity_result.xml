@@ -4,21 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical"
     tools:context="ur.moralmachine_altmann_ganz_schnell.resultActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:gravity="center"
         android:text="Ergebnisübersicht"
         android:textSize="20sp"
-        android:gravity="center"/>
+
+        />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
+
         android:gravity="center"
-        android:text="@string/interveinDescription" />
+        android:text="@string/interveinDescription"
+        android:textColor="#000000"
+        android:textSize="20dp" />
 
 
     <ProgressBar
@@ -39,7 +45,9 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center"
-        android:text="@string/proDriverDescription" />
+        android:text="@string/proDriverDescription"
+        android:textColor="#000000"
+        android:textSize="20dp" />
 
     <ProgressBar
         android:id="@+id/proDriverStats"
@@ -50,6 +58,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
+
         android:gravity="center"
         android:indeterminate="false"
         android:max="8"
@@ -58,8 +67,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
+
         android:gravity="center"
-        android:text="@string/utilDescription" />
+        android:text="@string/utilDescription"
+        android:textColor="#000000"
+        android:textSize="20dp" />
 
     <ProgressBar
         android:id="@+id/utilStats"
@@ -70,6 +82,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
+
         android:gravity="center"
         android:indeterminate="false"
         android:max="6"
@@ -78,8 +91,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
+
         android:gravity="center"
-        android:text="@string/rulesDescription" />
+        android:text="@string/rulesDescription"
+        android:textColor="#000000"
+        android:textSize="20dp" />
 
     <ProgressBar
         android:id="@+id/rulesStats"
@@ -95,6 +111,7 @@
         android:max="8"
         android:progress="0"
 
+
         />
 
     <Button
@@ -103,8 +120,10 @@
         android:layout_height="70dp"
         android:layout_gravity="bottom"
         android:layout_margin="5dp"
+        android:background="#90000000"
         android:gravity="center"
         android:text="@string/resetStats"
+        android:textColor="#ffffff"
 
 
         />
@@ -115,8 +134,10 @@
         android:layout_height="70dp"
         android:layout_gravity="bottom"
         android:layout_margin="5dp"
+        android:background="#90000000"
         android:gravity="center"
         android:text="@string/backToMenu"
+        android:textColor="#ffffff"
 
         />
 

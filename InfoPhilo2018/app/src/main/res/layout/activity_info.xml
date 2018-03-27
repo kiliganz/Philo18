@@ -1,43 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
     tools:context="ur.moralmachine_altmann_ganz_schnell.infoActivity">
 
-    <android.support.constraint.ConstraintLayout
+
+    <TextView
+        android:id="@+id/infoText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="575dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:background="#90000000"
+        android:gravity="center"
+        android:text="@string/info_string"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:background="#90000000"
+        android:text="@string/backToMenu"
+        android:textColor="#ffffff"
+        android:id="@+id/backToMenuInfo" />
 
 
-        <TextView
-            android:id="@+id/infoText"
-            android:layout_width="364dp"
-            android:layout_height="426dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/info_string"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/infoHeadline" />
-
-        <TextView
-            android:id="@+id/infoHeadline"
-            android:layout_width="356dp"
-            android:layout_height="59dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="Headline"
-            app:layout_constraintBottom_toTopOf="@+id/infoText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
-</android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

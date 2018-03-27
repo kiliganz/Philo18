@@ -91,8 +91,8 @@ public class LoginActivity extends AppCompatActivity {
                             Log.d(TAG, "signInAnonymously:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             Log.d("Nutzer", "" + user);
-                            Toast.makeText(LoginActivity.this, "" + user,
-                                    Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, "Erfolgreich angemeldet",
+                                    Toast.LENGTH_SHORT).show();
 
                         } else {
                             // If sign in fails, display a message to the user.

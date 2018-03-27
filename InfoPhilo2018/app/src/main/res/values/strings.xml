@@ -2,10 +2,22 @@
     <string name="app_name">MoralMachine</string>
     <string name="title_activity_game">GameActivity</string>
     <string name="title_activity_info">infoActivity</string>
-    <string name="info_string">Lorem ipsum dolor....</string>
+    <string name="info_string">Wie funktioniert die App?
+Durch Klick auf den Start-Button wird dem Nutzer das Erste von insgesamt 13 Szenarien vorgestellt. Pro Szenario gibt es zwei Entscheidungsmöglichkeiten zwischen denen sich der Nutzer entscheiden muss. Durch einen Klick auf das Bild erhält der User zusätzlich zu dem Bild noch eine textuelle Beschreibung der Entscheidungsmöglichkeit und deren Folgen. Nachdem alle 13 Szenarien absolviert wurden, wird eine Ergebnisseite angezeigt. Die vier Balken stellen die Entscheidungskriterien dar:&#10;
+&#10;
+        &#10;
+        Der Nutzer rettet nie möglichst viele Menschen oder der Nutzer rettet immer möglichst viele Menschen.&#10;
+        &#10;
+        &#10;
+Der Nutzer rettet nie den Fahrer oder der Nutzer rettet immer den Fahrer.&#10;
+        &#10;
+        &#10;
+Der Nutzer lässt das Fahrzeug nie aktiv eingereifen oder der Nutzer lässt das Fahrzeug immer aktiv eingreifen.&#10;
+        &#10;
+        &#10;
+Der Nutzer rettet nie Menschen, die sich an die Verkehrsregeln halten oder der Nutzer rettet immer Menschen, die sich an die Verkehrsregeln halten.
+</string>
     <string name="title_activity_result">resultActivity</string>
-
-
 
 
     <string name="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
@@ -14,7 +26,7 @@
 Tot: 1 Fußgänger</string>
     <string name="scen_2_dec1">In diesem Fall fährt das autonome Fahrzeug mit Bremsenversagen geradeaus weiter und kollidiert mit einem Fußgänger, der gerade die Straße überquert. Das Resultat:
 Tot: 1 Fußgänger</string>
-    <string name="scen_3_dec1">In diesem Fall fährt das autonome Fahrzeug mit Bremsenversagen geradeaus weiter und kollidiert mit zwei Fußgänger, die gerade die Straße überqueren. Das Resultat:
+    <string name="scen_3_dec1">In diesem Fall fährt das autonome Fahrzeug mit Bremsenversagen geradeaus weiter und kollidiert mit zwei Fußgängern, die gerade die Straße überqueren. Das Resultat:
 Tot: 2 Fußgänger</string>
     <string name="scen_4_dec1">In diesem Fall fährt das autonome Fahrzeug mit Bremsenversagen geradeaus weiter und kollidiert mit einem Fußgänger, der gerade die Straße überquert. Das Resultat:
 Tot: 1 Fußgänger</string>

@@ -194,7 +194,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case scen1:
 
                                 CharSequence text = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration = Toast.LENGTH_LONG;
+                                int duration = Toast.LENGTH_SHORT;
                                 Toast toast = Toast.makeText(ctx, text, duration);
                                 toast.show();
 
@@ -290,7 +290,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case scen2:
 
                                 CharSequence text2 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration2 = Toast.LENGTH_LONG;
+                                int duration2 = Toast.LENGTH_SHORT;
                                 Toast toast2 = Toast.makeText(ctx, text2, duration2);
                                 toast2.show();
                                 updateAvgStats(0, 1, 0, 0);
@@ -384,7 +384,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case scen3:
 
                                 CharSequence text3 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration3 = Toast.LENGTH_LONG;
+                                int duration3 = Toast.LENGTH_SHORT;
                                 Toast toast3 = Toast.makeText(ctx, text3, duration3);
                                 toast3.show();
                                 updateAvgStats(0, 1, 0, 0);
@@ -477,7 +477,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case scen4:
 
                                 CharSequence text4 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration4 = Toast.LENGTH_LONG;
+                                int duration4 = Toast.LENGTH_SHORT;
                                 Toast toast4 = Toast.makeText(ctx, text4, duration4);
                                 toast4.show();
                                 updateAvgStats(0, 1, 1, 0);
@@ -570,7 +570,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case scen5:
 
                                 CharSequence text5 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration5 = Toast.LENGTH_LONG;
+                                int duration5 = Toast.LENGTH_SHORT;
                                 Toast toast5 = Toast.makeText(ctx, text5, duration5);
                                 toast5.show();
                                 updateAvgStats(0, 0, 0, 0);
@@ -663,7 +663,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case scen6:
 
                                 CharSequence text6 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration6 = Toast.LENGTH_LONG;
+                                int duration6 = Toast.LENGTH_SHORT;
                                 Toast toast6 = Toast.makeText(ctx, text6, duration6);
                                 toast6.show();
                                 updateAvgStats(0, 1, 1, 0);
@@ -756,7 +756,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case scen7:
 
                                 CharSequence text7 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration7 = Toast.LENGTH_LONG;
+                                int duration7 = Toast.LENGTH_SHORT;
                                 Toast toast7 = Toast.makeText(ctx, text7, duration7);
                                 toast7.show();
                                 updateAvgStats(0, 0, 1, 0);
@@ -849,7 +849,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case scen8:
 
                                 CharSequence text8 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration8 = Toast.LENGTH_LONG;
+                                int duration8 = Toast.LENGTH_SHORT;
                                 Toast toast8 = Toast.makeText(ctx, text8, duration8);
                                 toast8.show();
                                 updateAvgStats(0, 0, 1, 0);
@@ -942,7 +942,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case scen9:
 
                                 CharSequence text9 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration9 = Toast.LENGTH_LONG;
+                                int duration9 = Toast.LENGTH_SHORT;
                                 Toast toast9 = Toast.makeText(ctx, text9, duration9);
                                 toast9.show();
                                 updateAvgStats(0, 0, 0, 0);
@@ -1035,7 +1035,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case scen10:
 
                                 CharSequence text10 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration10 = Toast.LENGTH_LONG;
+                                int duration10 = Toast.LENGTH_SHORT;
                                 Toast toast10 = Toast.makeText(ctx, text10, duration10);
                                 toast10.show();
                                 updateAvgStats(0, 1, 1, 0);
@@ -1128,7 +1128,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case scen11:
 
                                 CharSequence text11 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration11 = Toast.LENGTH_LONG;
+                                int duration11 = Toast.LENGTH_SHORT;
                                 Toast toast11 = Toast.makeText(ctx, text11, duration11);
                                 toast11.show();
                                 updateAvgStats(0, 0, 1, 0);
@@ -1221,7 +1221,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case scen12:
 
                                 CharSequence text12 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration12 = Toast.LENGTH_LONG;
+                                int duration12 = Toast.LENGTH_SHORT;
                                 Toast toast12 = Toast.makeText(ctx, text12, duration12);
                                 toast12.show();
                                 updateAvgStats(0, 0, 0, 1);
@@ -1314,7 +1314,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case scen13:
 
                                 CharSequence text13 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration13 = Toast.LENGTH_LONG;
+                                int duration13 = Toast.LENGTH_SHORT;
                                 Toast toast13 = Toast.makeText(ctx, text13, duration13);
                                 toast13.show();
                                 updateAvgStats(0, 0, 0, 0);
@@ -1413,7 +1413,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case dec1:
 
                                 CharSequence text = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration = Toast.LENGTH_LONG;
+                                int duration = Toast.LENGTH_SHORT;
                                 Toast toast = Toast.makeText(ctx, text, duration);
                                 toast.show();
                                 updateAvgStats(1, 0, 0, 0);
@@ -1506,7 +1506,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case dec2:
 
                                 CharSequence text2 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration2 = Toast.LENGTH_LONG;
+                                int duration2 = Toast.LENGTH_SHORT;
                                 Toast toast2 = Toast.makeText(ctx, text2, duration2);
                                 toast2.show();
                                 updateAvgStats(1, 0, 0, 0);
@@ -1600,7 +1600,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case dec3:
 
                                 CharSequence text3 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration3 = Toast.LENGTH_LONG;
+                                int duration3 = Toast.LENGTH_SHORT;
                                 Toast toast3 = Toast.makeText(ctx, text3, duration3);
                                 toast3.show();
                                 updateAvgStats(0, 0, 0, 1);
@@ -1694,7 +1694,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case dec4:
 
                                 CharSequence text4 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration4 = Toast.LENGTH_LONG;
+                                int duration4 = Toast.LENGTH_SHORT;
                                 Toast toast4 = Toast.makeText(ctx, text4, duration4);
                                 toast4.show();
                                 updateAvgStats(1, 0, 0, 0);
@@ -1788,7 +1788,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case dec5:
 
                                 CharSequence text5 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration5 = Toast.LENGTH_LONG;
+                                int duration5 = Toast.LENGTH_SHORT;
                                 Toast toast5 = Toast.makeText(ctx, text5, duration5);
                                 toast5.show();
                                 updateAvgStats(1, 0, 1, 0);
@@ -1882,7 +1882,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case dec6:
 
                                 CharSequence text6 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration6 = Toast.LENGTH_LONG;
+                                int duration6 = Toast.LENGTH_SHORT;
                                 Toast toast6 = Toast.makeText(ctx, text6, duration6);
                                 toast6.show();
                                 updateAvgStats(0, 0, 0, 1);
@@ -1976,7 +1976,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case dec7:
 
                                 CharSequence text7 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration7 = Toast.LENGTH_LONG;
+                                int duration7 = Toast.LENGTH_SHORT;
                                 Toast toast7 = Toast.makeText(ctx, text7, duration7);
                                 toast7.show();
                                 updateAvgStats(1, 0, 0, 0);
@@ -2070,7 +2070,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case dec8:
 
                                 CharSequence text8 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration8 = Toast.LENGTH_LONG;
+                                int duration8 = Toast.LENGTH_SHORT;
                                 Toast toast8 = Toast.makeText(ctx, text8, duration8);
                                 toast8.show();
                                 updateAvgStats(0, 0, 0, 1);
@@ -2164,7 +2164,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case dec9:
 
                                 CharSequence text9 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration9 = Toast.LENGTH_LONG;
+                                int duration9 = Toast.LENGTH_SHORT;
                                 Toast toast9 = Toast.makeText(ctx, text9, duration9);
                                 toast9.show();
                                 updateAvgStats(1, 0, 0, 1);
@@ -2258,7 +2258,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case dec10:
 
                                 CharSequence text10 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration10 = Toast.LENGTH_LONG;
+                                int duration10 = Toast.LENGTH_SHORT;
                                 Toast toast10 = Toast.makeText(ctx, text10, duration10);
                                 toast10.show();
                                 updateAvgStats(1, 0, 0, 1);
@@ -2352,7 +2352,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case dec11:
 
                                 CharSequence text11 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration11 = Toast.LENGTH_LONG;
+                                int duration11 = Toast.LENGTH_SHORT;
                                 Toast toast11 = Toast.makeText(ctx, text11, duration11);
                                 toast11.show();
                                 updateAvgStats(1, 1, 0, 0);
@@ -2446,7 +2446,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case dec12:
 
                                 CharSequence text12 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration12 = Toast.LENGTH_LONG;
+                                int duration12 = Toast.LENGTH_SHORT;
                                 Toast toast12 = Toast.makeText(ctx, text12, duration12);
                                 toast12.show();
                                 updateAvgStats(1, 1, 1, 0);
@@ -2540,7 +2540,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
                             case dec13:
 
                                 CharSequence text13 = "Auswahl " + imageCount + " wurde gespeichert";
-                                int duration13 = Toast.LENGTH_LONG;
+                                int duration13 = Toast.LENGTH_SHORT;
                                 Toast toast13 = Toast.makeText(ctx, text13, duration13);
                                 toast13.show();
                                 updateAvgStats(1, 1, 0, 0);
@@ -3035,7 +3035,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
 
         TextView textView = item_view.findViewById(R.id.image_description);
         imageView.setImageResource(imageResource[position]);
-        textView.setText("Szenario " + imageCount);
+        textView.setText("Entscheidungsmöglichkeit " + imageCount);
         container.addView(item_view);
 
         return item_view;
